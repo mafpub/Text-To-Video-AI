@@ -26,7 +26,7 @@ def get_program_path(program_name):
     program_path = search_program(program_name)
     return program_path
 
-def get_output_media(audio_file_path, timed_captions, background_video_data, video_server):
+def get_output_media(audio_file_path, timed_captions, background_video_data, video_server, video_file_name):
     OUTPUT_FILE_NAME = "rendered_video.mp4"
     magick_path = get_program_path("magick")
     print(magick_path)
@@ -65,7 +65,7 @@ def get_output_media(audio_file_path, timed_captions, background_video_data, vid
         video.duration = audio.duration
         video.audio = audio
 
-    video.write_videofile(OUTPUT_FILE_NAME, codec='libx264', audio_codec='aac', fps=25, preset='veryfast')
+    video.write_videofile(video_file_name, codec='libx264', audio_codec='aac', fps=25, preset='veryfast')
     
     # Clean up downloaded files
     for (t1, t2), video_url in background_video_data:
