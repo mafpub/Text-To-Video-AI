@@ -12,9 +12,8 @@ from utility.captions.timed_captions_generator import generate_timed_captions
 from utility.video.background_video_generator import generate_video_url
 from utility.render.render_engine import get_output_media
 from utility.video.video_search_query_generator import getVideoSearchQueriesTimed, merge_empty_intervals
-from hello import hello
 
-SAMPLE_TEXT = """Here's where we'll put text to be transcribed"""
+SAMPLE_TEXT = """Text of voiceover here."""
 
 if __name__ == "__main__":
     # Create the outputs directory if it doesn't exist
