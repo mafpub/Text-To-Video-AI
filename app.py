@@ -10,19 +10,15 @@ from utility.captions.timed_captions_generator import generate_timed_captions
 from utility.video.background_video_generator import generate_video_url
 from utility.render.render_engine import get_output_media
 from utility.video.video_search_query_generator import getVideoSearchQueriesTimed, merge_empty_intervals
-import argparse
 from hello import hello
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate a video from a topic.")
-    parser.add_argument("topic", type=str, help="The topic for the video")
+SAMPLE_TEXT = """Here's where we'll put text to be transcribed"""
 
-    args = parser.parse_args()
-    SAMPLE_TOPIC = args.topic
+if __name__ == "__main__":
     SAMPLE_FILE_NAME = "audio_tts.wav"
     VIDEO_SERVER = "pexel"
 
-    response = generate_script(SAMPLE_TOPIC)
+    response = SAMPLE_TEXT
     print("script: {}".format(response))
 
     asyncio.run(generate_audio(response, SAMPLE_FILE_NAME))
